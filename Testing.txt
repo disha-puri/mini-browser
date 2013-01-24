@@ -1,0 +1,36 @@
+* Copyright Disha Gandhi 2012
+
+* The folder contains the main file with top level component "JFrame" - browser.java.
+* It calls MyPanel.java which extends JPanel as one of the components to be added in JFrame.
+* The tests using Junit are in browserTest.java. They test the UI part of the browser.
+
+JUnit automated testing + Other manual testing is on the following line of thought: 
+
+1. Initialize a new browser.
+- Assert that both back and forward buttons are disabled
+- The textField (url-label) is blank
+
+2. Click on the home page (requirement - 6)
+- Confirm that url-label contains "http://www.google.com" 
+- The page displays google.com
+- Title of the frame is "Google" (requirement - 8)
+- Change the size of screen to check for scrollbars (requirement - 9)
+- back and forward buttons are still disabled
+
+3. Enter "http://web.cecs.pdx.edu/~xie in the url-label. Press "Go" or hit enter (requirement - 5)
+- Confirm that page displays the correct page 
+	(requirement - 1,3. rendering of HTML and images is correct which is not editable)
+- Title of the frame is "Fei Xie"
+- Back button is now enabled.
+
+4. Click on a hyperlink say publications.
+- check that the page changes to correct destination.(requirement - 2)
+
+5. Press back button to go to the last page. 
+- Forward button should now enable. 
+
+6. Press forward to come to current page. (requirement - 4)
+- Forward button should now disable.
+
+7. Enter a wrong url say "xyz" 
+- Confirm that status bar shows the error message and no page is displayed (requirement - 7)
